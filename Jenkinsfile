@@ -6,15 +6,15 @@ pipeline{
             steps {
                 echo 'Building...'
                 echo 'Installing Node.js dependencies...'
-                bat 'npm init -y'
-                bat 'npm install --save-dev http-server'
+                sh 'npm init -y'
+                sh 'npm install --save-dev http-server'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing Counter Application...'
                 echo 'Running index.js with HTML frontend...'
-                bat 'node -e "console.log(\\"Counter App - index.js executed successfully\\"); console.log(\\"Count starts at: 0\\"); console.log(\\"Available functions: increment(), decrement(), updateDisplay()\\");"'
+                sh 'node -e "console.log(\\"Counter App - index.js executed successfully\\"); console.log(\\"Count starts at: 0\\"); console.log(\\"Available functions: increment(), decrement(), updateDisplay()\\");"'
             }
         }
         stage('Deploy') {
