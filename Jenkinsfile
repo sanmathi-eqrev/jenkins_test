@@ -14,9 +14,8 @@ pipeline{
         }
         stage('Test') {
             steps {
-                echo 'Testing...'
-                bat 'npm install'
-                bat 'node index.js'
+                echo 'Testing Counter Application...'
+                bat 'node test.js'
             }
         }
         stage('Deploy') {
