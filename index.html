@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            min-width: 300px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        .counter-display {
+            font-size: 48px;
+            font-weight: bold;
+            color: #667eea;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        #decrementBtn {
+            background: #ef5350;
+            color: white;
+        }
+        
+        #decrementBtn:hover {
+            background: #e53935;
+            transform: scale(1.05);
+        }
+        
+        #incrementBtn {
+            background: #66bb6a;
+            color: white;
+        }
+        
+        #incrementBtn:hover {
+            background: #43a047;
+            transform: scale(1.05);
+        }
+        
+        button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Counter App</h1>
+        <div class="counter-display" id="counter">0</div>
+        <div class="button-group">
+            <button id="decrementBtn">Decrease</button>
+            <button id="incrementBtn">Increase</button>
+        </div>
+    </div>
+    
+    <script>
+        // Simple Javascript program to run the counter with frontend
+        let count = 0;
+
+        // Function to update the counter display
+        function updateDisplay() {
+            document.getElementById('counter').innerText = count;
+        }
+
+        // Function to increment the counter
+        function increment() {
+            count++;
+            updateDisplay();
+        }
+
+        // Function to decrement the counter
+        function decrement() {
+            count--;
+            updateDisplay();
+        }
+
+        // Initialize display
+        updateDisplay();
+
+        // Attach event listeners to buttons
+        document.getElementById('incrementBtn').addEventListener('click', increment);
+        document.getElementById('decrementBtn').addEventListener('click', decrement);
+    </script>
+</body>
+</html>
